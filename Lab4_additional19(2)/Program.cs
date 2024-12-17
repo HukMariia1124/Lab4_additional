@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Lab4_additional19
 {
-    class Program
+    internal class Program
     {
         static void Main()
         {
