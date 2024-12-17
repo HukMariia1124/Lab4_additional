@@ -27,7 +27,7 @@ namespace Lab4_additional20
                 }
                 else
                 {
-                    commonNumbers = commonNumbers.Intersect(currentRow).ToArray();
+                    commonNumbers = Intersection(commonNumbers, currentRow);
                 }
 
                 if (commonNumbers.Length == 0)
@@ -38,13 +38,36 @@ namespace Lab4_additional20
 
             if (commonNumbers.Length > 0)
             {
-                Array.Sort(commonNumbers);
                 Console.WriteLine(string.Join(" ", commonNumbers));
             }
             else
             {
                 Console.WriteLine();
             }
+        }
+        static int[] Intersection(int[] array1, int[] array2)
+        {
+            int i = 0, j = 0, k = 0;
+            int[] temp = new int[k];
+
+            while (i < array1.Length && j < array2.Length)
+            {
+                if (array1[i] < array2[j])
+                {
+                    i++;
+                }
+                else if (array1[i] > array2[j])
+                {
+                    j++;
+                }
+                else
+                {
+                    Array.Resize(ref temp, temp.Length + 1);
+                    temp[k++] = array1[i++];
+                    j++;
+                }
+            }
+            return temp;
         }
     }
 }

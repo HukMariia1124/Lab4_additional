@@ -38,7 +38,6 @@ namespace Lab4_additional20
             int M = int.Parse(data[1]);
 
             int[] commonNumbers = new int[0];
-            int[] previousRow = new int[0];
             int[] temp = new int[0];
 
             for (int i = 0; i < N; i++)
